@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 使用最新的 Material 3 基础主题 -->
+    <style name="Theme.MyApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- 主色 -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryContainer">@color/purple_200</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- 强调色 -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryContainer">@color/teal_50</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- 状态栏和导航栏设置 -->
+        <item name="android:windowTranslucentStatus">true</item>  <!-- 允许内容延伸到状态栏区域 -->
+        <item name="android:windowTranslucentNavigation">true</item> <!-- 允许内容延伸到导航栏区域 -->
+        <item name="android:statusBarColor">@android:color/transparent</item> <!-- 透明状态栏 -->
+        <item name="android:navigationBarColor">@android:color/transparent</item> <!-- 透明导航栏 -->
+
+        <!-- 关键修改：移除全屏设置 -->
+        <!-- <item name="android:windowFullscreen">true</item> -->
+
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item> <!-- 全面屏适配 -->
+
+        <!-- 圆角尺寸 -->
+        <item name="shapeCornerSmall">4dp</item>
+        <item name="shapeCornerMedium">8dp</item>
+
+        <!-- 文字样式 -->
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.MyApp.Body</item>
+
+        <!-- 按钮样式 -->
+        <item name="materialButtonStyle">@style/Widget.MyApp.Button</item>
+
+        <!-- 修复 TabLayout 引用 -->
+        <item name="tabStyle">@style/MyApp.TabLayout</item>
+    </style>
+
+    <!-- 为需要状态栏可见的活动添加特殊主题 -->
+    <style name="Theme.MyApp.Immersive" parent="Theme.MyApp">
+        <!-- 仅允许状态栏透明，但保持内容安全区域 -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item> <!-- 状态栏文字白色 -->
+    </style>
+
+    <!-- 使用系统字体避免 roboto 引用问题 -->
+    <style name="TextAppearance.MyApp.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">16sp</item>
+        <!-- 如需更大字体可用以下配置 -->
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+    </style>
+
+    <!-- 按钮样式 -->
+    <style name="Widget.MyApp.Button" parent="Widget.Material3.Button">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="cornerRadius">24dp</item>
+        <!-- 阴影效果 -->
+        <item name="elevation">2dp</item>
+        <item name="android:stateListAnimator">@null</item> <!-- 禁用默认动画 -->
+    </style>
+
+    <!-- 新添加的 TabLayout 样式 -->
+    <style name="MyApp.TabLayout" parent="Widget.Material3.TabLayout">
+        <item name="tabIndicatorColor">?attr/colorPrimary</item>
+        <item name="tabIndicatorHeight">3dp</item>
+        <item name="tabInlineLabel">true</item>
+        <!-- 自定义标签样式 -->
+        <item name="tabTextAppearance">@style/MyApp.TabText</item>
+    </style>
+
+    <!-- Tab文本样式 -->
+    <style name="MyApp.TabText" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- 对话框主题 -->
+    <style name="MyApp.Dialog" parent="ThemeOverlay.Material3.Dialog">
+        <item name="dialogCornerRadius">16dp</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.MyApp.Button.Dialog</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.MyApp.Button.Dialog</item>
+        <!-- 弹窗外侧区域透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+
+    <!-- 对话框按钮 -->
+    <style name="Widget.MyApp.Button.Dialog" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- 全屏无系统UI的活动主题（如果需要全屏，单独使用） -->
+    <style name="Theme.MyApp.Fullscreen" parent="Theme.MyApp">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- 透明状态栏但有系统UI的主题（可选） -->
+    <style name="Theme.MyApp.Translucent" parent="Theme.MyApp">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">?attr/isLightTheme</item> <!-- 根据主题切换文字颜色 -->
+    </style>
+</resources>

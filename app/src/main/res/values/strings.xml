@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">财富助手</string>
+    <string name="net_assets">净资产(元)</string>
+    <string name="total_assets">总资产</string>
+    <string name="total_liabilities">总负债</string>
+    <string name="add_asset">添加资产</string>
+    <string name="assets_title">资产</string>
+    <string name="bills_title">账单明细</string>
+    <!-- 添加更多需要的字符串 -->
+</resources>

@@ -1,0 +1,35 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.MultiCurrencyTracker" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- 关键修改：移除全屏设置 -->
+        <!-- <item name="android:windowFullscreen">true</item> -->
+
+        <!-- 状态栏设置 -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item> <!-- 深色状态栏文字（白色） -->
+        <item name="android:windowTranslucentStatus">true</item> <!-- 允许内容延伸到状态栏 -->
+
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:textColor">@color/textPrimary</item>
+
+        <!-- 自定义TabLayout样式 -->
+        <item name="tabLayoutStyle">@style/MyTabLayout</item>
+    </style>
+
+    <!-- 自定义TabLayout样式 -->
+    <style name="MyTabLayout" parent="Widget.Material3.TabLayout">
+        <item name="tabIndicatorColor">@color/tabIndicator</item>
+        <item name="tabSelectedTextColor">@color/textPrimary</item>
+        <item name="tabTextAppearance">@style/TextAppearance.MultiCurrencyTracker.Tab</item>
+    </style>
+
+    <!-- 自定义Tab文字样式 -->
+    <style name="TextAppearance.MultiCurrencyTracker.Tab" parent="TextAppearance.Material3.LabelMedium">
+        <!-- 自定义属性 -->
+    </style>
+</resources>

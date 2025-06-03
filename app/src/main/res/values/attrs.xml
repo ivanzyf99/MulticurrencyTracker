@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material 3 形状属性 -->
+    <attr name="shapeCornerSmall" format="dimension" />
+    <attr name="shapeCornerMedium" format="dimension" />
+
+    <!-- TabLayout 属性 -->
+    <attr name="tabLayoutStyle" format="reference" />
+</resources>

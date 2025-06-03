@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:title="资产"
+        android:icon="@drawable/ic_home"/>
+
+    <item
+        android:id="@+id/nav_bills"
+        android:title="支出"
+        android:icon="@drawable/ic_bills"/>
+
+    <item
+        android:id="@+id/nav_reports"
+        android:title="报表"
+        android:icon="@drawable/ic_reports"/>
+
+</menu>
